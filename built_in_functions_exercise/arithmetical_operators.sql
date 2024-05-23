@@ -1,0 +1,23 @@
+CREATE TABLE
+	bookings_calculation
+AS
+SELECT
+	booked_for
+FROM
+	bookings
+WHERE
+	apartment_id = 93;
+
+ALTER TABLE
+	bookings_calculation
+ADD
+	multiplication NUMERIC,
+ADD
+	modulo NUMERIC;
+
+UPDATE
+	bookings_calculation
+SET
+	multiplication = booked_for * 50,
+	modulo = MOD(booked_for, 50)
+;
